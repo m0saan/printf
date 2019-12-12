@@ -49,9 +49,9 @@ int	is_pointer(t_struct *list, va_list ap)
 	{
 		handle_widthprecision(list, pointer_len);
 		if (list->minus == 1)
-			right_hexa_flags(list, tb);
+			right_hexa(list, tb);
 		else
-			left_hexa_flags(list, tb);
+			left_hexa(list, tb);
 	}
 	return (0);
 }

@@ -32,6 +32,7 @@ typedef struct	s_struct
 	int			precision;
 	int			asterisk;
 }				t_struct;
+
 int				ft_printf(const char *fmt, ...);
 void			ft__flag(const char *fmt, t_struct *list,
 va_list ap, int i);
@@ -58,6 +59,7 @@ void			unsigned_leftparese(t_struct *list, char *s,
 unsigned int unsigned_len);
 int				goto_percent(t_struct *list);
 int				print_flag_char(t_struct *list, int kind);
+int				pppp(t_struct *list, unsigned int hexa_len, char *tb);
 int				print_flag_str(t_struct *list, char *out_str, int kind);
 char			*hexa_convert(t_struct *list, unsigned long hexa_len, char s);
 void			int_righthand(t_struct *list, int out_int, int refer, char *s);
@@ -67,8 +69,8 @@ int				zero_input(t_struct *list, int out_int);
 int				zero_input_u(t_struct *list, unsigned int out_int);
 int				zero_input_x(t_struct *list, long out_hexa);
 int				zero_input_p(t_struct *list, void *out_pointer);
-void			left_hexa_flags(t_struct *list, char *tb);
-void			right_hexa_flags(t_struct *list, char *tb);
+void			left_hexa(t_struct *list, char *tb);
+void			right_hexa(t_struct *list, char *tb);
 void			zerolist(t_struct *list);
 void			zerolistll(t_struct *list);
 int				print_hexa(char *tb);

@@ -66,19 +66,14 @@ int		is_hexa(const char *fmt, t_struct *list, va_list ap)
 	else
 		tb = hexa_convert(list, out_hexa, (fmt[list->i] == 'x') ? 'a' : 'A');
 	hexa_len = ft_strlen(tb);
-	if (list->width == -1 && list->precision == -1)
-	{
-		list->n += write(1, tb, hexa_len);
+	if (pppp(list, hexa_len, tb) == 1)
 		return (0);
-	}
 	else
 		handle_widthprecision(list, hexa_len);
 	if (fmt[list->i] == 'x')
-		list->minus == 1 ? right_hexa_flags(list, tb)
-		: left_hexa_flags(list, tb);
+		list->minus == 1 ? right_hexa(list, tb) : left_hexa(list, tb);
 	else
-		list->minus == 1 ? right_hexa_flags(list, tb)
-		: left_hexa_flags(list, tb);
+		list->minus == 1 ? right_hexa(list, tb) : left_hexa(list, tb);
 	return (0);
 }
 

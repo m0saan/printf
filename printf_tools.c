@@ -83,36 +83,3 @@ int		ft_intlen(long x)
 		return (2);
 	return (1);
 }
-
-int		zero_input_x(t_struct *list, long out_hexa)
-{
-	if (out_hexa == 0 && list->dot == 1 && list->width > 0 &&
-	(list->precision == -1 || list->precision == 0))
-	{
-		while (list->width-- > 0)
-			list->n += write(1, " ", 1);
-		return (1);
-	}
-	else if (out_hexa == 0 && list->dot == 1 &&
-	(list->precision == 0 || list->precision == -1))
-	{
-		write(1, "", 1);
-		return (1);
-	}
-	return (0);
-}
-
-int		print_hexa(char *tb)
-{
-	unsigned int	ret;
-	int				i;
-
-	i = 0;
-	ret = 0;
-	if (ft_strlen(tb) != 0)
-	{
-		while (tb[i] != '\0')
-			ret += write(1, &tb[i++], 1);
-	}
-	return (ret);
-}
