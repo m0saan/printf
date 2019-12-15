@@ -78,11 +78,11 @@ int				print_hexa(char *tb);
 char			*ft_strrev(char *str);
 int				ft_intlen(long x);
 void			if_null(t_struct *list, void *s);
-size_t  ft_strlen(const char *str);
-char    *ft_strjoin(char const *s1, char const *s2);
-char    *ft_strchr(const char *s, int c);
-char    *ft_strdup(const char *s1);
-char    *ft_itoa(long n);
-int     ft_atoi(const char *s);
+size_t			ft_strlen(const char *str);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strchr(const char *s, int c);
+char			*ft_strdup(const char *s1);
+char			*ft_itoa(long n);
+int				ft_atoi(const char *s);
 
 #endif
