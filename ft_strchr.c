@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/29 13:56:07 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:29:39 by moboustt         ###   ########.fr       */
+/*   Created: 2019/10/15 23:53:00 by moboustt          #+#    #+#             */
+/*   Updated: 2019/12/15 21:35:17 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	is_char(t_struct *list, va_list ap)
+char	*ft_strchr(const char *s, int c)
 {
-	int out_char;
+	int		i;
+	char	*str;
 
-	out_char = (int)va_arg(ap, int);
-	if (list->width == -1)
-		list->n += write(1, &out_char, 1);
-	else
+	i = 0;
+	str = (char *)s;
+	while (str[i] != '\0')
 	{
-		if (list->minus == 1)
-		{
-			list->n += write(1, &out_char, 1);
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-		}
-		else
-		{
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-			list->n += write(1, &out_char, 1);
-		}
+		if (s[i] == c)
+			return (&str[i]);
+		i++;
 	}
+	if (s[i] == (char)c)
+		return (&str[i]);
+	return (NULL);
 }

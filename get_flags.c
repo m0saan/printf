@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:46:21 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/05 18:05:09 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:29:20 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 void	if_star(const char *fmt, t_struct *list, va_list ap)

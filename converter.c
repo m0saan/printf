@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 14:22:27 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/06 14:30:37 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:29:32 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 void	conversion(const char *fmt, t_struct *list, va_list ap)

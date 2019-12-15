@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 12:07:56 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/06 14:31:54 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:33:38 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 int	ft_do_parsing(const char *fmt, va_list ap, t_struct *list, int i_pos)

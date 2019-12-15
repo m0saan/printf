@@ -6,12 +6,11 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 14:10:32 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/01 14:27:30 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:28:53 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int	zero_input_p(t_struct *list, void *out_pointer)
 {

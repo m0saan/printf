@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 14:37:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/06 18:10:08 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:29:05 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 int		is_int(t_struct *list, va_list ap)

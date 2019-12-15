@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/29 13:56:07 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:29:39 by moboustt         ###   ########.fr       */
+/*   Created: 2019/10/16 00:00:17 by moboustt          #+#    #+#             */
+/*   Updated: 2019/12/15 21:32:10 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	is_char(t_struct *list, va_list ap)
+char	*ft_strdup(const char *s1)
 {
-	int out_char;
+	char	*str;
+	int		i;
+	int		j;
 
-	out_char = (int)va_arg(ap, int);
-	if (list->width == -1)
-		list->n += write(1, &out_char, 1);
-	else
+	i = 0;
+	j = 0;
+	while (s1[j])
+		j++;
+	if (!(str = malloc(j + 1)))
+		return (NULL);
+	while (s1[i])
 	{
-		if (list->minus == 1)
-		{
-			list->n += write(1, &out_char, 1);
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-		}
-		else
-		{
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-			list->n += write(1, &out_char, 1);
-		}
+		str[i] = s1[i];
+		i++;
 	}
+	str[i] = '\0';
+	return (char *)(str);
 }

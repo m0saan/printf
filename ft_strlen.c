@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/29 13:56:07 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:29:39 by moboustt         ###   ########.fr       */
+/*   Created: 2019/10/16 01:10:58 by moboustt          #+#    #+#             */
+/*   Updated: 2019/12/15 21:32:30 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	is_char(t_struct *list, va_list ap)
+size_t	ft_strlen(const char *str)
 {
-	int out_char;
+	size_t i;
 
-	out_char = (int)va_arg(ap, int);
-	if (list->width == -1)
-		list->n += write(1, &out_char, 1);
-	else
-	{
-		if (list->minus == 1)
-		{
-			list->n += write(1, &out_char, 1);
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-		}
-		else
-		{
-			while (list->width-- > 1)
-				list->n += write(1, " ", 1);
-			list->n += write(1, &out_char, 1);
-		}
-	}
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

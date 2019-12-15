@@ -6,12 +6,11 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 20:29:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/12 20:29:40 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:47:40 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 char	*hexa_convert(t_struct *list, unsigned long deci, char s)
 {
@@ -77,7 +76,7 @@ int		is_hexa(const char *fmt, t_struct *list, va_list ap)
 	return (0);
 }
 
-void	right_hexa_flags(t_struct *list, char *tb)
+void	right_hexa(t_struct *list, char *tb)
 {
 	while (list->precision-- > 0)
 		list->n += write(1, "0", 1);
@@ -86,7 +85,7 @@ void	right_hexa_flags(t_struct *list, char *tb)
 		list->n += write(1, " ", 1);
 }
 
-void	left_hexa_flags(t_struct *list, char *tb)
+void	left_hexa(t_struct *list, char *tb)
 {
 	int rc;
 

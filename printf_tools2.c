@@ -6,12 +6,11 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 21:56:57 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/12 21:57:21 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:28:41 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 int		zero_input_x(t_struct *list, long out_hexa)
 {

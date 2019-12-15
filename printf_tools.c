@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 20:21:19 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/12 20:21:27 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:28:47 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 void	zerolist(t_struct *list)

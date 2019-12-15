@@ -6,10 +6,11 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 10:11:08 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/07 14:14:33 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:49:14 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <unistd.h>
+#include <stdlib.h>
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <unistd.h>
@@ -77,4 +78,11 @@ int				print_hexa(char *tb);
 char			*ft_strrev(char *str);
 int				ft_intlen(long x);
 void			if_null(t_struct *list, void *s);
+size_t  ft_strlen(const char *str);
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strchr(const char *s, int c);
+char    *ft_strdup(const char *s1);
+char    *ft_itoa(long n);
+int     ft_atoi(const char *s);
+
 #endif
