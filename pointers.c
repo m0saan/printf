@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 14:10:32 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:28:53 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:06:16 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int	is_pointer(t_struct *list, va_list ap)
 		else
 			left_hexa(list, tb);
 	}
+	free(tb);
 	return (0);
 }

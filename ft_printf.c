@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 12:07:56 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:33:38 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/18 22:21:23 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	ft_printf(const char *fmt, ...)
 	va_start(ap, fmt);
 	fmt_len = ft_strlen(fmt);
 	if (!(s = (t_struct*)malloc(sizeof(t_struct))))
-		return (0);
+		return (-1);
 	zerolist(s);
 	if (!fmt[0])
 	{

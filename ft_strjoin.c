@@ -6,13 +6,13 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 22:03:53 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 22:03:55 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:07:06 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int			s1_len;
 	int			s2_len;

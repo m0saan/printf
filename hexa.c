@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 20:29:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:47:40 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:15:48 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 char	*hexa_convert(t_struct *list, unsigned long deci, char s)
 {
-	char			tb[100];
-	char			*r;
+	char			*tb;
 	unsigned long	res;
+	char			*r;
 
 	res = 0;
+	tb = calloc(100, sizeof(char));
 	while (deci != 0)
 	{
 		res = deci % 16;
@@ -34,8 +35,8 @@ char	*hexa_convert(t_struct *list, unsigned long deci, char s)
 		tb[list->h++] = res;
 		deci = deci / 16;
 	}
-	tb[list->h] = '\0';
-	r = ft_strdup(tb);
+	r = tb;
+	free(tb);
 	return (ft_strrev(r));
 }
 

@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 13:31:03 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:28:22 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 13:04:46 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int		is_unsigned(t_struct *list, va_list ap)
 			unsigned_leftparese(list, s, unsigned_len);
 	}
 	return (0);
+	free(s);
 }
 
 void	widthprecisionhandle(t_struct *list, unsigned int unsigned_len)

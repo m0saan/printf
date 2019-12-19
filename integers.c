@@ -6,38 +6,38 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 14:37:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:29:05 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 17:24:54 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_int(t_struct *list, va_list ap)
+void	is_int(t_struct *list, va_list ap)
 {
-	int out_int;
-	int int_len;
-	int refer;
+	int		out_int;
+	int		int_len;
+	int		refer;
+	char	*s;
 
 	refer = 0;
 	out_int = (int)va_arg(ap, int);
 	int_len = ft_intlen(out_int);
+	s = ft_itoa(out_int);
 	if (zero_input(list, out_int) == 1)
-		return (0);
+		return ;
 	if (list->precision == -1 && list->width == -1)
 	{
 		out_int < 0 ? int_len += 1 : int_len;
-		list->n += write(1, ft_itoa(out_int), int_len);
+		list->n += write(1, s, int_len);
 	}
 	else
 	{
 		if (out_int < 0)
-		{
 			refer = -1;
-			out_int = -out_int;
-		}
+		out_int < 0 ? out_int = -(out_int) : out_int;
 		is_int_handle(list, out_int, refer, int_len);
 	}
-	return (0);
+	free(s);
 }
 
 int		zero_input(t_struct *list, int out_int)
@@ -58,10 +58,11 @@ int		zero_input(t_struct *list, int out_int)
 	return (0);
 }
 
-void	is_int_handle(t_struct *list, int out_int, int refer, int int_len)
+void	is_int_handle(t_struct *list, long out_int, int refer, int int_len)
 {
 	char *s;
 
+	out_int < 0 ? out_int = -out_int : out_int;
 	s = ft_itoa(out_int);
 	if (list->dot && list->precision > int_len)
 		list->precision -= int_len;
@@ -75,6 +76,7 @@ void	is_int_handle(t_struct *list, int out_int, int refer, int int_len)
 		int_righthand(list, out_int, refer, s);
 	else
 		int_lefthand(list, out_int, refer, s);
+	free(s);
 }
 
 void	int_righthand(t_struct *list, int out_int, int refer, char *s)

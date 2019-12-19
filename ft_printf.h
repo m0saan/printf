@@ -6,11 +6,10 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 10:11:08 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:49:14 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/19 17:25:13 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-#include <stdlib.h>
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <unistd.h>
@@ -38,9 +37,9 @@ int				ft_printf(const char *fmt, ...);
 void			ft__flag(const char *fmt, t_struct *list,
 va_list ap, int i);
 void			conversion(const char *fmt, t_struct *list, va_list ap);
-void			is_int_handle(t_struct *list, int out_int,
+void			is_int_handle(t_struct *list, long out_int,
 int refer, int int_len);
-int				is_int(t_struct *list, va_list ap);
+void			is_int(t_struct *list, va_list ap);
 void			is_char(t_struct *list, va_list ap);
 int				is_string(t_struct *list, va_list ap);
 void			goto_right(t_struct *list, char *out_str, int str_len);
@@ -79,7 +78,7 @@ char			*ft_strrev(char *str);
 int				ft_intlen(long x);
 void			if_null(t_struct *list, void *s);
 size_t			ft_strlen(const char *str);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin(char *s1, char *s2);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 char			*ft_itoa(long n);
