@@ -14,7 +14,7 @@
 NAME= libftprintf.a
 _CC= gcc
 _CFLAGS=-Wall -g -Wextra -Werror
-_SOURCES= ft_atoi.c ft_printf.c ft_strchr.c ft_strlen.c integers.c pointers.c string.c char.c ft_itoa.c ft_strdup.c get_flags.c printf_tools.c unsigned.c converter.c ft_strjoin.c hexa.c percent.c printf_tools2.c
+_SOURCES= lib.c ft_printf.c ft_strlen.c integers.c pointers.c string.c char.c ft_itoa.c get_flags.c printf_tools.c unsigned.c converter.c hexa.c percent.c printf_tools2.c
 _OBJ= *.o
 all: $(NAME)
 
