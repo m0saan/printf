@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 21:56:57 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:28:41 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 09:54:54 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		zero_input_x(t_struct *list, long out_hexa)
 		return (1);
 	}
 	else if (out_hexa == 0 && list->dot == 1 &&
-	(list->precision == 0 || list->precision == -1))
+		(list->precision == 0 || list->precision == -1))
 	{
 		write(1, "", 1);
 		return (1);
@@ -62,4 +62,19 @@ int		pppp(t_struct *list, unsigned int hexa_len, char *tb)
 		return (1);
 	}
 	return (0);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned int	i;
+	char			*bb;
+
+	i = 0;
+	bb = b;
+	while (i < len)
+	{
+		bb[i] = c;
+		i++;
+	}
+	return (bb);
 }

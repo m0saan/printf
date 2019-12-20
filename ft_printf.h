@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 10:11:08 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/19 17:25:13 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 09:52:15 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s1);
 char			*ft_itoa(long n);
 int				ft_atoi(const char *s);
+void			*ft_memset(void *b, int c, size_t len);
 
 #endif
