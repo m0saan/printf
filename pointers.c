@@ -6,13 +6,13 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 14:10:32 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/19 14:06:16 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 23:26:50 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	zero_input_p(t_struct *list, void *out_pointer)
+int		zero_input_p(t_struct *list, void *out_pointer)
 {
 	if (out_pointer == 0 && list->dot == 1 && list->width > 0
 	&& (list->precision == -1 || list->precision == 0))
@@ -30,14 +30,16 @@ int	zero_input_p(t_struct *list, void *out_pointer)
 	return (0);
 }
 
-int	is_pointer(t_struct *list, va_list ap)
+void	is_pointer(t_struct *list, va_list ap)
 {
 	void	*out_pointer;
 	char	*tb;
 	int		pointer_len;
+	char	*r;
 
+	r = malloc(100 * sizeof(char));
 	out_pointer = va_arg(ap, unsigned long *);
-	tb = hexa_convert(list, (unsigned long)out_pointer, 'a');
+	tb = hexa_convert(list, (unsigned long)out_pointer, 'a', r);
 	if ((out_pointer == 0 || out_pointer == NULL) && !list->dot)
 		tb = "0";
 	tb = ft_strjoin("0x", tb);
@@ -52,6 +54,6 @@ int	is_pointer(t_struct *list, va_list ap)
 		else
 			left_hexa(list, tb);
 	}
+	free(r);
 	free(tb);
-	return (0);
 }

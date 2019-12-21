@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 20:21:19 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/18 23:23:16 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 21:41:45 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strrev(char *str)
 		j++;
 		i--;
 	}
-	return (str);
+	return (char *)(str);
 }
 
 int		ft_intlen(long x)

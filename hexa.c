@@ -6,21 +6,19 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 20:29:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/20 09:52:22 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 23:24:08 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "ft_printf.h"
 
-char	*hexa_convert(t_struct *list, unsigned long deci, char s)
+char	*hexa_convert(t_struct *list, unsigned long deci, char s, char *r)
 {
-	char			*tb;
 	unsigned long	res;
-	char			*r;
 
 	res = 0;
-	tb = malloc(100 * sizeof(char));
-	ft_memset(tb, 0, 100);
+	ft_memset(r, 0, 100);
 	while (deci != 0)
 	{
 		res = deci % 16;
@@ -33,11 +31,9 @@ char	*hexa_convert(t_struct *list, unsigned long deci, char s)
 			if (s == 'a')
 				res += 87;
 		}
-		tb[list->h++] = res;
+		r[list->h++] = res;
 		deci = deci / 16;
 	}
-	r = tb;
-	free(tb);
 	return (ft_strrev(r));
 }
 
@@ -50,32 +46,32 @@ void	handle_widthprecision(t_struct *list, unsigned int hexa_len)
 	list->width = list->width - (list->precision + hexa_len);
 }
 
-int		is_hexa(const char *fmt, t_struct *list, va_list ap)
+void	is_hexa(const char *fmt, t_struct *list, va_list ap)
 {
-	unsigned int		hexa_len;
 	char				*tb;
 	long				out_hexa;
+	char				*r;
 
+	r = malloc(100 * sizeof(char));
 	out_hexa = va_arg(ap, unsigned int);
 	if (zero_input(list, out_hexa) == 1)
-		return (0);
+		return ;
 	else if (out_hexa == 0 && list->dot == 1 && list->width > 0 &&
 	(list->precision == 0 || list->precision == -1))
 		tb = "";
 	else if (out_hexa == 0)
 		tb = "0";
 	else
-		tb = hexa_convert(list, out_hexa, (fmt[list->i] == 'x') ? 'a' : 'A');
-	hexa_len = ft_strlen(tb);
-	if (pppp(list, hexa_len, tb) == 1)
-		return (0);
+		tb = hexa_convert(list, out_hexa, (fmt[list->i] == 'x') ? 'a' : 'A', r);
+	if (pppp(list, ft_strlen(tb), tb) == 1)
+		return ;
 	else
-		handle_widthprecision(list, hexa_len);
+		handle_widthprecision(list, ft_strlen(tb));
 	if (fmt[list->i] == 'x')
 		list->minus == 1 ? right_hexa(list, tb) : left_hexa(list, tb);
 	else
 		list->minus == 1 ? right_hexa(list, tb) : left_hexa(list, tb);
-	return (0);
+	free(r);
 }
 
 void	right_hexa(t_struct *list, char *tb)

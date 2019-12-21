@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 10:11:08 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/20 09:52:15 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/21 15:06:58 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void			goto_right(t_struct *list, char *out_str, int str_len);
 void			goto_left(t_struct *list, char *out_str, int str_len);
 void			specify_widthprecision(t_struct *list, char *out_str,
 int str_len);
-int				is_hexa(const char *fmt, t_struct *list, va_list ap);
-int				is_pointer(t_struct *list, va_list ap);
+void			is_hexa(const char *fmt, t_struct *list, va_list ap);
+void			is_pointer(t_struct *list, va_list ap);
 void			handle_widthprecision(t_struct *list,
 unsigned int hexa_len);
 int				is_unsigned(t_struct *list, va_list ap);
@@ -61,7 +61,8 @@ int				goto_percent(t_struct *list);
 int				print_flag_char(t_struct *list, int kind);
 int				pppp(t_struct *list, unsigned int hexa_len, char *tb);
 int				print_flag_str(t_struct *list, char *out_str, int kind);
-char			*hexa_convert(t_struct *list, unsigned long hexa_len, char s);
+char			*hexa_convert(t_struct *list, unsigned long hexa_len,
+char s, char *r);
 void			int_righthand(t_struct *list, int out_int, int refer, char *s);
 void			int_lefthand(t_struct *list, int out_int, int refer, char *s);
 void			print_base(const char *fmt, t_struct *list, int i_pos);

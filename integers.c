@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 14:37:34 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/19 17:24:54 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:25:23 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ void	is_int(t_struct *list, va_list ap)
 
 int		zero_input(t_struct *list, int out_int)
 {
+	int c;
+
+	c = '\0';
 	if (out_int == 0 && list->dot == 1 && list->width > 0 &&
 	(list->precision == -1 || list->precision == 0))
 	{
@@ -52,7 +55,7 @@ int		zero_input(t_struct *list, int out_int)
 	else if (out_int == 0 && list->dot == 1 &&
 	(list->precision == 0 || list->precision == -1))
 	{
-		write(1, "", 1);
+		write(1, &c, 0);
 		return (1);
 	}
 	return (0);

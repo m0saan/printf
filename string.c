@@ -6,7 +6,7 @@
 /*   By: moboustt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 18:36:25 by moboustt          #+#    #+#             */
-/*   Updated: 2019/12/15 21:28:35 by moboustt         ###   ########.fr       */
+/*   Updated: 2019/12/20 20:20:28 by moboustt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,12 @@ void	goto_right(t_struct *list, char *out_str, int str_len)
 {
 	if (list->precision > 0 && str_len == 0)
 		list->precision = 0;
-	if ((list->precision > 0 || list->precision == -1) && list->dot == 1)
+	if ((list->precision >= 0 || list->precision == -1) && list->dot == 1)
+	{
+		list->precision == -1 ? list->precision = 0 : list->precision;
+		list->precision > str_len ? list->precision = str_len : list->precision;
 		list->n += write(1, out_str, list->precision);
+	}
 	else
 		list->n += write(1, out_str, str_len);
 	if (list->precision > str_len)
