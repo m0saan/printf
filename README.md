@@ -84,12 +84,6 @@ The following format specifiers are supported:
 | .number   | For integer specifiers (d, i, o, u, x, X): precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0.<br>For f and F specifiers: this is the number of digits to be printed after the decimal point. **By default, this is 6, maximum is 9**.<br>For s: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered.<br>If the period is specified without an explicit value for precision, 0 is assumed. |
 | .\*       | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-# Tasks
+### Author
 
-These are all the tasks of this project, the ones that are completed link to the corresponding files.
-
-### [0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life](./ft_printf.c)
-
-- Write a function that produces output according to format.
-- c : converts input into a character
-- s : converts input into a string
+- **moboustt** - [moboustta6@gmail.com](https://github.com/MoBoustta)
