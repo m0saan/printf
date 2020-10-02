@@ -65,13 +65,10 @@ The following format specifiers are supported:
 
 ### Supported Flags
 
-| Flags   | Description                                                                                                                                                                                                                                                                                      |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| -       | Left-justify within the given field width; Right justification is the default.                                                                                                                                                                                                                   |
-| +       | Forces to precede the result with a plus or minus sign (+ or -) even for positive numbers.<br>By default, only negative numbers are preceded with a - sign.                                                                                                                                      |
-| (space) | If no sign is going to be written, a blank space is inserted before the value.                                                                                                                                                                                                                   |
-| #       | Used with o, b, x or X specifiers the value is preceded with 0, 0b, 0x or 0X respectively for values different than zero.<br>Used with f, F it forces the written output to contain a decimal point even if no more digits follow. By default, if no digits follow, no decimal point is written. |
-| 0       | Left-pads the number with zeros (0) instead of spaces when padding is specified (see width sub-specifier).                                                                                                                                                                                       |
+| Flags | Description                                                                                                |
+| ----- | ---------------------------------------------------------------------------------------------------------- |
+| -     | Left-justify within the given field width; Right justification is the default.                             |
+| 0     | Left-pads the number with zeros (0) instead of spaces when padding is specified (see width sub-specifier). |
 
 ### Supported Width
 
